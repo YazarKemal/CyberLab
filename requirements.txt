@@ -1,0 +1,74 @@
+# CyberLab — Python Dependencies
+#
+# No packages are currently installed. This file documents planned
+# dependencies organized by the phase that will introduce them.
+#
+# When a phase begins, uncomment the relevant block and run:
+#   pip install -r requirements.txt
+#
+# Android / Termux note:
+# Some packages (scapy, cryptography) require a C compiler.
+# Install prerequisites in Termux first:
+#   pkg install python build-essential binutils
+
+# ============================================================
+# Phase 2 — Networking Fundamentals
+# ============================================================
+# (Standard library only: socket, struct, os, sys)
+
+# ============================================================
+# Phase 3 — Python Network Programming
+# ============================================================
+# (Standard library only: socket, select, asyncio, threading)
+
+# ============================================================
+# Phase 4 — Reconnaissance and Enumeration
+# ============================================================
+# requests>=2.31.0         # HTTP client for banner grabbing and OSINT
+# beautifulsoup4>=4.12.0   # HTML parsing for web enumeration
+# lxml>=4.9.0              # Fast XML/HTML parser (beautifulsoup4 backend)
+
+# ============================================================
+# Phase 5 — Web Application Security
+# ============================================================
+# requests>=2.31.0         # HTTP client (continued from Phase 4)
+# beautifulsoup4>=4.12.0   # HTML parsing (continued from Phase 4)
+
+# ============================================================
+# Phase 6 — Cryptography (Authentication & Cryptography)
+# ============================================================
+# cryptography>=41.0.0     # Cryptographic recipes and primitives (AES, RSA, etc.)
+# pycryptodome>=3.19.0     # Self-contained crypto library (alternative)
+
+# ============================================================
+# Phase 7 — Wireless Security
+# ============================================================
+# scapy>=2.5.0             # Packet crafting and 802.11 frame analysis
+#                           # NOTE: raw socket operations require root on Android
+
+# ============================================================
+# Phase 8 — CTF and Controlled Exploitation
+# ============================================================
+# requests>=2.31.0         # HTTP client (web challenges)
+# pwntools>=4.12.0         # CTF exploit development framework
+
+# ============================================================
+# Phase 9 — Forensics
+# ============================================================
+# (TBD — tools like volatility3 for memory forensics may need
+#  separate virtual environment due to complex native dependencies)
+
+# ============================================================
+# Phase 10 — Defensive Security
+# ============================================================
+# requests>=2.31.0         # HTTP client (API interaction, log shipping)
+
+# ============================================================
+# Cross-cutting (all phases)
+# ============================================================
+# pytest>=7.0.0            # Testing framework
+# rich>=13.0.0             # Beautiful terminal output for tools and reports
+# ipython>=8.0.0           # Interactive Python shell for exploration
+# black>=23.0.0            # Code formatter
+# ruff>=0.1.0              # Fast Python linter
+# jupyter>=1.0.0           # Jupyter notebook for lab reports (optional)

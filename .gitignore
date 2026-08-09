@@ -1,0 +1,46 @@
+# Environment and secrets
+.env
+.env.*
+*.key
+*.pem
+secrets/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Node.js
+node_modules/
+
+# Captures and logs
+captures/
+logs/
+*.pcap
+*.pcapng
+
+# Databases
+*.sqlite
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Termux / Android
+*.apk
+
+# Claude Code
+.claude/cache/
