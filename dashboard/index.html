@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07110f">
+  <title>CyberLab Command Center</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">CL</div>
+        <div><strong>CYBERLAB</strong><span>COMMAND CENTER</span></div>
+      </div>
+      <nav class="nav" aria-label="Ana menü">
+        <button class="nav-item active" data-target="overview"><span>◫</span> Overview</button>
+        <button class="nav-item" data-target="labs"><span>⌘</span> Labs</button>
+        <button class="nav-item" data-target="roles"><span>△</span> Roles</button>
+        <button class="nav-item" data-target="activity"><span>≋</span> Activity</button>
+      </nav>
+      <div class="sidebar-foot"><div class="status-row"><span class="pulse"></span><span>LOCAL MODE</span></div><small>127.0.0.1 only</small></div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <div><p class="eyebrow">PERSONAL CYBER RANGE</p><h1>Command Center</h1></div>
+        <div class="top-actions"><div class="system-pill"><span class="pulse"></span><span id="server-status">SYNCING</span></div><button id="refresh-btn" class="icon-btn" type="button" aria-label="Verileri yenile">↻</button></div>
+      </header>
+
+      <section id="overview" class="view active-view">
+        <div class="hero-panel">
+          <div><p class="eyebrow">CURRENT MISSION</p><h2 id="mission-title">CyberLab durumunu okuyorum…</h2><p id="mission-subtitle" class="muted">Yerel repo ve laboratuvar kayıtları analiz ediliyor.</p></div>
+          <div class="mission-state"><span class="tiny-label">MODE</span><strong>LEARN</strong></div>
+        </div>
+        <div class="metric-grid">
+          <article class="metric"><span>Completed Labs</span><strong id="metric-completed">—</strong><small id="metric-total">of — discovered</small></article>
+          <article class="metric"><span>Verified Findings</span><strong id="metric-verified">—</strong><small>from observations</small></article>
+          <article class="metric"><span>Current Phase</span><strong id="metric-phase">—</strong><small id="metric-phase-name">waiting</small></article>
+          <article class="metric"><span>Git State</span><strong id="metric-git">—</strong><small id="metric-branch">branch</small></article>
+        </div>
+        <div class="two-col">
+          <section class="panel"><div class="panel-head"><div><p class="eyebrow">LEARNING PATH</p><h3>Operational Roadmap</h3></div><span id="progress-label" class="badge">0%</span></div><div id="phase-list" class="phase-list"></div></section>
+          <section class="panel terminal-panel"><div class="panel-head"><div><p class="eyebrow">LIVE REPO</p><h3>System Telemetry</h3></div><span class="badge dim">LOCAL</span></div><div class="terminal" id="telemetry" aria-live="polite"><div><span class="prompt">$</span> waiting for /api/status</div></div></section>
+        </div>
+      </section>
+
+      <section id="labs" class="view">
+        <div class="section-head"><div><p class="eyebrow">EXPERIMENT ARCHIVE</p><h2>Laboratories</h2></div><input id="lab-search" class="search" type="search" placeholder="Lab ara…" aria-label="Lab ara"></div>
+        <div id="lab-grid" class="lab-grid"></div>
+      </section>
+
+      <section id="roles" class="view">
+        <div class="section-head"><div><p class="eyebrow">PURPLE TEAM MODEL</p><h2>Three Perspectives</h2></div></div>
+        <div class="role-tabs" role="tablist" aria-label="Siber güvenlik rolleri"><button class="role-tab active" type="button" data-role="red">RED TEAM</button><button class="role-tab" type="button" data-role="victim">VICTIM</button><button class="role-tab" type="button" data-role="blue">BLUE TEAM</button></div>
+        <section class="role-stage"><div class="role-icon">R</div><div><p class="eyebrow" id="role-kicker">OFFENSIVE VIEW</p><h3 id="role-title">Red Team</h3><p id="role-copy">Yetkili laboratuvar hedeflerinde saldırı yüzeyini, protokol davranışını ve kontrollü sömürü zincirini anlamak.</p></div></section>
+        <div class="flow"><div class="flow-node">ATTACK<br><span>Observe technique</span></div><div class="flow-arrow">→</div><div class="flow-node">VICTIM<br><span>Observe impact</span></div><div class="flow-arrow">→</div><div class="flow-node">DEFEND<br><span>Detect & harden</span></div></div>
+      </section>
+
+      <section id="activity" class="view">
+        <div class="section-head"><div><p class="eyebrow">GIT HISTORY</p><h2>Recent Activity</h2></div></div>
+        <div class="panel"><div id="activity-list" class="activity-list"></div></div>
+      </section>
+
+      <footer><span>CyberLab • local educational environment</span><span id="last-sync">not synced</span></footer>
+    </main>
+  </div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
